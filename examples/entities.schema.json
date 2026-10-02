@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {"type": "string"},
+          "label": {"enum": ["PERSON", "ORG"]},
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1}
+        },
+        "required": ["text", "label", "start", "end"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["entities"],
+  "additionalProperties": false
+}
